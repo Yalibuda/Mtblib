@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mtblib", "Mtblib\Mtblib.csproj", "{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{884D4E31-FDC9-4AF8-A163-AD1C66D064D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{884D4E31-FDC9-4AF8-A163-AD1C66D064D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{884D4E31-FDC9-4AF8-A163-AD1C66D064D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{884D4E31-FDC9-4AF8-A163-AD1C66D064D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{884D4E31-FDC9-4AF8-A163-AD1C66D064D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

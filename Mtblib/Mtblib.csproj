@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D84EB98A-BDFA-4C3E-B283-BD3C313075D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mtblib</RootNamespace>
+    <AssemblyName>Mtblib</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Mtblib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Mtblib.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MathNet.Numerics, Version=3.12.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MathNet.Numerics.3.12.0\lib\net40\MathNet.Numerics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Graph\BarChart\Chart.cs" />
+    <Compile Include="Graph\CategoricalChart\BoxPlot.cs" />
+    <Compile Include="Graph\CategoricalChart\CMean.cs" />
+    <Compile Include="Graph\CategoricalChart\Individual.cs" />
+    <Compile Include="Graph\CategoricalChart\Meanlab.cs" />
+    <Compile Include="Graph\Component\DataView\Bar.cs" />
+    <Compile Include="Graph\Component\DataView\DataViewPosition.cs" />
+    <Compile Include="Graph\Component\DataView\Projection.cs" />
+    <Compile Include="Graph\Component\IPosition.cs" />
+    <Compile Include="Graph\CategoricalChart\IQRBox.cs" />
+    <Compile Include="Graph\CategoricalChart\Mean.cs" />
+    <Compile Include="Graph\CategoricalChart\Outlier.cs" />
+    <Compile Include="Graph\CategoricalChart\RangeBox.cs" />
+    <Compile Include="Graph\CategoricalChart\Whisker.cs" />
+    <Compile Include="Graph\Component\Datlab.cs" />
+    <Compile Include="Graph\Component\MultiGraph\MPanel.cs" />
+    <Compile Include="Graph\Component\Region\Legend.cs" />
+    <Compile Include="Graph\Component\Region\LegendSection.cs" />
+    <Compile Include="Graph\Component\Scale\AxLabel.cs" />
+    <Compile Include="Graph\Component\Scale\CateScale.cs" />
+    <Compile Include="Graph\Component\Scale\CateTick.cs" />
+    <Compile Include="Graph\Component\DataView\Connect.cs" />
+    <Compile Include="Graph\Component\Scale\ContScale.cs" />
+    <Compile Include="Graph\Component\Scale\ContSecScale.cs" />
+    <Compile Include="Graph\Component\Scale\ContTick.cs" />
+    <Compile Include="Graph\Component\Region\DataRegion.cs" />
+    <Compile Include="Graph\Component\DataView\DataView.cs" />
+    <Compile Include="Graph\Component\Footnote.cs" />
+    <Compile Include="Graph\Component\MGraph.cs" />
+    <Compile Include="Graph\Component\Region\FigureRegion.cs" />
+    <Compile Include="Graph\Component\Region\GraphRegion.cs" />
+    <Compile Include="Graph\Component\Scale\IRefe.cs" />
+    <Compile Include="Graph\Component\Scale\Refe.cs" />
+    <Compile Include="Graph\Component\Scale\Scale.cs" />
+    <Compile Include="Graph\Component\Enum.cs" />
+    <Compile Include="Graph\Component\DataView\Symbol.cs" />
+    <Compile Include="Graph\Component\Annotation\Annotation.cs" />
+    <Compile Include="Graph\Component\Label.cs" />
+    <Compile Include="Graph\Component\Scale\Tick.cs" />
+    <Compile Include="Graph\Component\IDataOption.cs" />
+    <Compile Include="Graph\Component\IDataView.cs" />
+    <Compile Include="Graph\Component\ILabels.cs" />
+    <Compile Include="Graph\Component\Region\Region.cs" />
+    <Compile Include="Graph\Component\Scale\IScale.cs" />
+    <Compile Include="Graph\Component\Scale\ITick.cs" />
+    <Compile Include="Graph\Component\LabelPosition.cs" />
+    <Compile Include="Graph\Component\Title.cs" />
+    <Compile Include="Graph\ScatterPlot\Plot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Stat\ChangePoints.cs" />
+    <Compile Include="Stat\MathTool.cs" />
+    <Compile Include="Tools\Arithmetic.cs" />
+    <Compile Include="Tools\MtbTools.cs" />
+    <Compile Include="Tools\NTuple.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <COMReference Include="Mtb">
+      <Guid>{0681D994-F2E6-4FC0-B441-6C1E9E328F57}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
