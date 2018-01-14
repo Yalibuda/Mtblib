@@ -27,24 +27,55 @@ namespace Tester
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-
             Mtb.Application mtbApp = new Mtb.Application();
             mtbApp.UserInterface.DisplayAlerts = false;
             mtbApp.UserInterface.Visible = true;
             Mtb.Project proj = mtbApp.ActiveProject;
-            proj.Worksheets.Open(@"D:\Dropbox\Workspace\01.chipMOS\06.Dataset\Defect Ratio by Lot by Customer.MTW");
-            Mtb.Worksheet ws = proj.ActiveWorksheet;
-            double sstdev = ((double[])ws.Columns.Item("C10").GetData()).StdDev();
-            Console.Write(sstdev);
-            Chart barchart = new Chart(proj,ws);
-            barchart.Variables = "C10 C11";
-            barchart.BarsRepresent = Chart.ChartRepresent.TWO_WAY_TABLE;
-            barchart.GroupingVariables = "C2 C3";
-            barchart.Bar.GroupingBy = "C2 C3";
-            barchart.NoMissing = true;
-            barchart.NoEmpty = true;
-            string path2 = MtbTools.BuildTemporaryMacro("mycode.mtb", barchart.GetCommand());
-            proj.ExecuteCommand(string.Format("% \"{0}\" 1", path2));
+            Mtb.Worksheet ws;
+            try
+            {
+                proj.Worksheets.Open(@"C:\Users\Yalibuda\Desktop\data_16.mtw");
+                ws = proj.ActiveWorksheet;
+            }
+            catch
+            {
+                mtbApp.Quit();
+                return;
+            }
+
+            
+            
+            Mtb.Column rawDataCol = ws.Columns.Item("VALUE");
+            double mean = Mtblib.Tools.MtbTools.MISSINGVALUE;
+            double stdev = Mtblib.Tools.MtbTools.MISSINGVALUE;
+            double maximum = Mtblib.Tools.MtbTools.MISSINGVALUE;
+            double minimum = Mtblib.Tools.MtbTools.MISSINGVALUE;
+            try
+            {
+                mean = ((double[])rawDataCol.GetData()).Where(x => x < Mtblib.Tools.MtbTools.MISSINGVALUE).Average();
+                stdev = ((double[])rawDataCol.GetData()).Where(x => x < Mtblib.Tools.MtbTools.MISSINGVALUE).StdDev();
+                maximum = ((double[])rawDataCol.GetData()).Where(x => x < Mtblib.Tools.MtbTools.MISSINGVALUE).Max();
+                minimum = ((double[])rawDataCol.GetData()).Where(x => x < Mtblib.Tools.MtbTools.MISSINGVALUE).Min();
+            }
+            catch(Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
+
+
+            Console.WriteLine("Stdev:{0}",stdev);
+
+            //double sstdev = ((double[])ws.Columns.Item("C10").GetData()).StdDev();
+            //Console.Write(sstdev);
+            //Chart barchart = new Chart(proj,ws);
+            //barchart.Variables = "C10 C11";
+            //barchart.BarsRepresent = Chart.ChartRepresent.TWO_WAY_TABLE;
+            //barchart.GroupingVariables = "C2 C3";
+            //barchart.Bar.GroupingBy = "C2 C3";
+            //barchart.NoMissing = true;
+            //barchart.NoEmpty = true;
+            //string path2 = MtbTools.BuildTemporaryMacro("mycode.mtb", barchart.GetCommand());
+            //proj.ExecuteCommand(string.Format("% \"{0}\" 1", path2));
 
 
 

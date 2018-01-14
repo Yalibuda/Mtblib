@@ -99,6 +99,7 @@
     <Compile Include="Graph\Component\LabelPosition.cs" />
     <Compile Include="Graph\Component\Title.cs" />
     <Compile Include="Graph\ScatterPlot\Plot.cs" />
+    <Compile Include="Graph\TimeSeriesPlot\TSPlot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stat\ChangePoints.cs" />
     <Compile Include="Stat\MathTool.cs" />

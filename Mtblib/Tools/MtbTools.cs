@@ -25,6 +25,10 @@ namespace Mtblib.Tools
     {
         /// <summary>遺失值</summary>
         public const double MISSINGVALUE = 1.23456E+30;
+        //public static int[] FILLCOLOR = { 127, 28, 7, 58, 116, 78, 29, 45, 123, 35, 73, 8, 49, 57, 26 };
+        public static int[] COLOR = { 64, 8, 9, 12, 18, 34 };
+        public static int[] SYMBOLTYPE = { 6, 12, 16, 20, 23, 26, 29 };
+        public static int[] LINETPYE = { 1, 2, 3, 4, 5 };
 
         #region Worksheet 相關
 
@@ -72,6 +76,38 @@ namespace Mtblib.Tools
                 }
 
                 return varStr;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Source + "-" + ex.Message);
+                return null;
+
+            }
+
+        }
+
+        /// <summary>
+        /// 新增 Minitab 欄位並回傳新增的欄位陣列
+        /// </summary>
+        /// <param name="ws">欲新增變數的工作表</param>
+        /// <param name="num">欲新增的數量</param>
+        /// <returns>Mtb.Column[]:新增的欄位ID</returns>
+        public static Mtb.Column[] CreateColumnArray(Mtb.Worksheet ws, int num)
+        {
+            
+            int cnt = 0;
+            Mtb.Column[] varCols = new Mtb.Column[num]; //num have to large than 1
+            try
+            {
+                cnt = ws.Columns.Count;
+                ws.Columns.Add(Quantity: num);
+                for (int i = 0; i < varCols.Length; i++)
+                {
+                    varCols[i] = ws.Columns.Item(cnt + 1 + i);
+                }                
+
+                return varCols;
 
             }
             catch (Exception ex)
