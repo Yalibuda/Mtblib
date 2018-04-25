@@ -85,6 +85,7 @@ namespace Mtblib.Graph.CategoricalChart
         public CateScale XScale { set; get; }
         public MPanel Panel { set; get; }
         public Meanlab MeanDatlab { set; get; }
+        public Indivlab IndivDatlab { set; get; }
 
         public override void SetDefault()
         {
@@ -101,6 +102,7 @@ namespace Mtblib.Graph.CategoricalChart
             XScale = new CateScale(ScaleDirection.X_Axis);          
             Panel = new MPanel();
             MeanDatlab = new Meanlab();
+            IndivDatlab = new Indivlab();
             //MeanDatlab.GetCommand = () =>
             //{
             //    if (!MeanDatlab.Visible) return "";
@@ -179,6 +181,7 @@ namespace Mtblib.Graph.CategoricalChart
             cmnd.Append(Outlier.GetCommand());
             cmnd.Append(Individual.GetCommand());
             cmnd.Append(MeanDatlab.GetCommand());
+            cmnd.Append(IndivDatlab.GetCommand());
 
             cmnd.Append(Panel.GetCommand());
 
