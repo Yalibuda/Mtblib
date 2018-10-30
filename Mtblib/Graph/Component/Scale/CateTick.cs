@@ -43,7 +43,8 @@ namespace Mtblib.Graph.Component.Scale
             StringBuilder cmnd = new StringBuilder();
 
             if (Start > -1) cmnd.AppendLine(string.Format(" Tstart {0};", NMajor));
-            if (Increament > -1) cmnd.AppendLine(string.Format(" Tincr K {0}", NMinor));
+            //if (Increament > -1) cmnd.AppendLine(string.Format(" Tincr K {0}", NMinor));
+            if (Increament > -1) cmnd.AppendLine(string.Format(" Tincr {0};", Increament));
             if (_labels != null)
             {
                 cmnd.AppendLine(" Label &");

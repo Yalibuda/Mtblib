@@ -40,6 +40,7 @@ namespace Mtblib.Graph.Component
             if (RowId == null) return "";
             StringBuilder cmnd = new StringBuilder();
             cmnd.AppendFormat(" Posi {0} {1};\r\n", RowId[0], (Text == null ? "" : "\"" + Text + "\""));
+            if (Model > 0) cmnd.AppendFormat("  Model {0};\r\n", Model);
             if (FontColor > 0) cmnd.AppendFormat("  TColor {0};\r\n", FontColor);
             if (FontSize > 0) cmnd.AppendFormat("  PSize {0};\r\n", FontSize);
             if (Bold) cmnd.AppendLine("  Bold;");
