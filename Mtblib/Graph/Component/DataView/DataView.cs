@@ -66,7 +66,7 @@ namespace Mtblib.Graph.Component.DataView
                 {
                     try
                     {
-                        _size = ((int[])MtbTools.ConvertInputToFloatArray(value)).Select(x => x.ToString()).ToArray();
+                        _size = ((float[])MtbTools.ConvertInputToFloatArray(value)).Select(x => x.ToString()).ToArray();
                     }
                     catch
                     {
