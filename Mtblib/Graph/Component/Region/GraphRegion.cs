@@ -38,21 +38,22 @@ namespace Mtblib.Graph.Component.Region
 
         protected override string DefaultCommand()
         {
-            if (_coord == null && AutoSize == false) return ""; //表示要手動卻沒有輸入座標，直接跳出
+            //if (_coord == null && AutoSize == false) return ""; //表示要手動卻沒有輸入座標，直接跳出
             StringBuilder cmnd = new StringBuilder();
             cmnd.AppendLine("Graph &");
             if (AutoSize)
             {
                 cmnd.AppendLine(";");
             }
-            else
+            else if (AutoSize == false && _coord != null)
             {
                 cmnd.AppendLine(string.Join(" &\r\n", _coord) + ";");
-            }    
+            }
+            else
+            {
+                cmnd.AppendLine(";");
+            }
 
-            cmnd.AppendLine("Graph &");
-            if (_coord != null) cmnd.AppendLine(string.Join(" &\r\n", _coord) + " &");
-            cmnd.AppendLine(";");
             if (Type != null)
             {
                 cmnd.AppendLine(string.Format(" Type {0};", Type[0]));

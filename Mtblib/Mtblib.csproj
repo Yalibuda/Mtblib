@@ -55,6 +55,7 @@
     <Compile Include="Graph\CategoricalChart\BoxPlot.cs" />
     <Compile Include="Graph\CategoricalChart\CMean.cs" />
     <Compile Include="Graph\CategoricalChart\Individual.cs" />
+    <Compile Include="Graph\CategoricalChart\Indivlab.cs" />
     <Compile Include="Graph\CategoricalChart\Meanlab.cs" />
     <Compile Include="Graph\Component\DataView\Bar.cs" />
     <Compile Include="Graph\Component\DataView\DataViewPosition.cs" />
@@ -120,9 +121,6 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
-    <None Include="ClassDiagram2.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
