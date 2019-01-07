@@ -181,8 +181,8 @@ namespace Mtblib.Graph.Component
             if (!ShowDefaultSubTitle) cmnd.AppendLine("Nods;");
             if (!ShowPersonalSubTitle) cmnd.AppendLine("Nope;");
             if (!ShowSeparateSubTitle) cmnd.AppendLine("Nose;");
-            cmnd.AppendLine("Nosf;");
-            cmnd.AppendLine("Noxf;");
+            //cmnd.AppendLine("Nosf;");
+            //cmnd.AppendLine("Noxf;");
 
             return cmnd.ToString();
         }
