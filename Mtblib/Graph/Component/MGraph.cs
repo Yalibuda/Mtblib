@@ -106,10 +106,24 @@ namespace Mtblib.Graph.Component
                 if (MtbTools.VerifyGraphPath(GraphPath))
                 {
                     cmnd.AppendFormat(" GSave \"{0}\";\r\n", GraphPath);
-                    System.Text.RegularExpressions.Regex regex = new System.Text.RegularExpressions.Regex(@".*?\.(mgf)$");
+                    System.Text.RegularExpressions.Regex regex =
+                        new System.Text.RegularExpressions.Regex(@".*?\.(mgf|png|gif|bmp|tif|emf)$", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
                     if (regex.IsMatch(GraphPath))
                     {
-                        cmnd.AppendLine("  MGF;");
+                        System.Text.RegularExpressions.Match m = regex.Match(GraphPath);
+                        string f = m.Groups[1].ToString().ToUpper();
+                        switch (f)
+                        {
+                            case "PNG":
+                                f = "PNGH";
+                                break;
+                            case "BMP":
+                                f = "BMPH";
+                                break;
+                            default:
+                                break;
+                        }
+                        cmnd.AppendLine(string.Format("  {0};", f));
                     }
                     else
                     {
