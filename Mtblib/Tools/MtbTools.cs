@@ -701,7 +701,7 @@ namespace Mtblib.Tools
         public static bool VerifyGraphPath(string path)
         {
             if (string.IsNullOrEmpty(path)) return false;
-            Regex regex = new Regex(@"^(?:[\w]\:|\\)(\\[^\\\/:\*?<>|]+)+\.(JPEG|JPG|MGF)$",
+            Regex regex = new Regex(@"^(?:[\w]\:|\\)(\\[^\\\/:\*?<>|]+)+\.(JPEG|JPG|MGF|PNG|TIF|BMP)$",
                 RegexOptions.IgnoreCase);
             if (regex.IsMatch(path))
             {
