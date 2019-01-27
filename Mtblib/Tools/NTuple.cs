@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mtblib.Tools
 {
-    internal class NTuple<T> : IEquatable<NTuple<T>>
+    public class NTuple<T> : IEquatable<NTuple<T>>
     {
         /// <summary>
         /// <para>
